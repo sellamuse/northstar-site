@@ -78,6 +78,7 @@ body {
 .btn.primary {
   background: var(--gold);
   color: #14100a;
+  box-shadow: 0 4px 18px rgba(232, 185, 60, 0.22), 0 1px 3px rgba(2, 4, 10, 0.4);
 }
 
 .btn.primary:hover {
@@ -90,7 +91,11 @@ body {
   color: var(--text);
 }
 
-.btn.ghost:hover { border-color: var(--gold); }
+.btn.ghost:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(2, 4, 10, 0.35);
+}
 
 .fine {
   font-size: 0.85rem;
@@ -100,7 +105,7 @@ body {
 /* ---------- sections ---------- */
 main { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
 
-section { padding: 3.5rem 0; }
+section { padding: 4.5rem 0; }
 
 h2 {
   font-size: 1.9rem;
@@ -112,17 +117,28 @@ h2 {
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .card {
   background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 1rem;
+  border-radius: 1.25rem;
   padding: 1.75rem;
+  box-shadow:
+    0 1px 2px rgba(2, 4, 10, 0.45),
+    0 10px 30px rgba(2, 4, 10, 0.35),
+    inset 0 1px 0 rgba(238, 241, 248, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card:hover { border-color: var(--gold); }
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 2px 4px rgba(2, 4, 10, 0.45),
+    0 20px 44px rgba(2, 4, 10, 0.45),
+    0 0 0 1px rgba(232, 185, 60, 0.35),
+    inset 0 1px 0 rgba(238, 241, 248, 0.06);
+}
 
 .num {
   font-size: 0.8rem;
@@ -147,9 +163,13 @@ code {
 /* ---------- honest ---------- */
 .honest {
   background: var(--bg2);
-  border-radius: 1.25rem;
+  border-radius: 1.5rem;
   padding: 3rem 2.5rem;
   margin: 1rem 0;
+  box-shadow:
+    0 1px 2px rgba(2, 4, 10, 0.45),
+    0 14px 36px rgba(2, 4, 10, 0.35),
+    inset 0 1px 0 rgba(238, 241, 248, 0.05);
 }
 
 .honest ul { list-style: none; max-width: 44em; margin: 0 auto; }
@@ -198,9 +218,9 @@ footer .fine { max-width: 40em; margin: 0.5rem auto 0; font-size: 0.78rem; }
 /* ---------- product cards (added 2026-10-12) ---------- */
 .card img {
   width: 100%;
-  border-radius: 0.6rem;
+  border-radius: 0.9rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--line);
+  box-shadow: 0 6px 20px rgba(2, 4, 10, 0.4);
   display: block;
 }
 
@@ -233,3 +253,64 @@ footer .fine { max-width: 40em; margin: 0.5rem auto 0; font-size: 0.78rem; }
 }
 
 .card .btn { margin-top: 0.5rem; }
+
+/* ---------- proof / see it work (added 2026-10-13) ---------- */
+.sample-card {
+  background: var(--card);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  max-width: 54rem;
+  margin: 0 auto;
+  box-shadow:
+    0 1px 2px rgba(2, 4, 10, 0.45),
+    0 14px 36px rgba(2, 4, 10, 0.4),
+    inset 0 1px 0 rgba(238, 241, 248, 0.05);
+}
+
+.table-wrap { overflow-x: auto; border-radius: 0.75rem; }
+
+.sample-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.sample-table th {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid rgba(232, 185, 60, 0.35);
+  white-space: nowrap;
+}
+
+.sample-table td {
+  color: var(--text);
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid rgba(154, 163, 189, 0.12);
+  white-space: nowrap;
+}
+
+.sample-table td:first-child { font-weight: 600; }
+.sample-table td:last-child { color: var(--muted); }
+.sample-table tbody tr:last-child td { border-bottom: none; }
+.sample-table tbody tr { transition: background 0.15s ease; }
+.sample-table tbody tr:hover { background: rgba(232, 185, 60, 0.05); }
+
+.sample-card figcaption {
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: center;
+  max-width: 42em;
+  margin: 1.1rem auto 0;
+}
+
+.proof-cta { text-align: center; margin-top: 1.75rem; }
+
+@media (max-width: 40rem) {
+  .sample-card { padding: 1.25rem; }
+}
