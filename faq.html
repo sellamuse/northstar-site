@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Northstar AI / SellaMuse</title>
+<link rel="icon" href="favicon.svg">
+<style>
+body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:#0d1226;color:#e9ecf5;margin:0;line-height:1.6}
+.wrap{max-width:820px;margin:0 auto;padding:40px 22px 80px}
+a{color:#e8b93c}
+h1{font-size:2rem;margin-bottom:4px}
+h2{color:#e8b93c;margin-top:38px;font-size:1.3rem}
+.qa{background:#141a36;border-radius:16px;padding:16px 20px;margin:14px 0;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.qa h3{margin:0 0 6px;font-size:1.02rem}
+.qa p{margin:0;color:#c9cede}
+.sub{color:#9aa3c0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="sub"><a href="./">&larr; Northstar AI — SellaMuse workflow packs</a></p>
+<h1>Questions, answered straight</h1>
+<p class="sub">Everything here is the same knowledge our site chat answers from. If it's not established here, we say so — nothing invented.</p>
+<h2>Products and prices</h2>
+<div class="qa"><h3>What are you selling, exactly?</h3><p>Downloadable n8n workflow packs. You buy a ZIP, import the workflow files into your own n8n, and the workflows run on your machine or server. There are two packs, a bundle of both, and six individual workflows.</p></div>
+<div class="qa"><h3>What does the Small-Biz Lead-Gen Pack do? ($39)</h3><p>It runs a three-step lead pipeline. (1) Lead Finder: you give it a business type and a location, and it pulls real businesses from OpenStreetMap into a list with name, address, phone, website, email, and coordinates. (2) AI Enrichment: it builds a short AI snapshot of each lead — what they do, likely pain points, and a personalization hook for your pitch. (3) Outreach Drafts: it writes one personalized draft email per lead. Every draft is locked to human review — nothing sends until you approve it.</p></div>
+<div class="qa"><h3>What does the Client Onboarding Pack do? ($39)</h3><p>It handles new-client intake in three steps. (1) Intake Capture: a shareable &quot;Start a project&quot; form validates each submission, adds the client to your client list, and queues a confirmation email draft. (2) AI Proposal Draft: for each new client, AI drafts a personalized proposal email plus a scope checklist and red flags for your eyes only. It never invents prices — there is a [YOUR PRICE] placeholder you fill in. (3) Follow-up Nudges: it finds proposals that have gone quiet past your threshold (default 4 days, adjustable) and drafts one polite follow-up per run.</p></div>
+<div class="qa"><h3>What&#x27;s the Full Pipeline Bundle? ($59)</h3><p>Both packs together — all six workflows. Bought one at a time, the six workflows cost $114. The bundle is $59, so you save $55.</p></div>
+<div class="qa"><h3>Can I buy just one workflow? ($19 each)</h3><p>Yes. Each of the six workflows is sold on its own for $19: Lead Finder, AI Enrichment, Outreach Drafts, Intake Capture, AI Proposal Draft, and Follow-up Nudges. Bought singly, the three in a pack cost $57 versus $39 for the pack.</p></div>
+<div class="qa"><h3>Why these prices?</h3><p>Each workflow replaces a recurring manual task — building lead lists by hand, researching prospects one by one, drafting follow-ups. $19 is one workflow, $39 is a three-workflow pipeline, $59 is the full pipeline. It is a one-time purchase; there is no subscription and no ongoing software cost to run them.</p></div>
+<h2>What&#x27;s inside / how it works</h2>
+<div class="qa"><h3>What do I actually get when I buy?</h3><p>An instant ZIP download from Payhip. Each pack contains the workflow files (JSON) plus a step-by-step setup README with a $0 setup guide, troubleshooting, and pricing/positioning notes. The Onboarding Pack also includes two starter CSV files (clients and outbox) that its workflows use.</p></div>
+<div class="qa"><h3>How do I install a workflow?</h3><p>In n8n: Workflows → Import from File, and pick the JSON file. The setup README walks through the rest step by step.</p></div>
+<div class="qa"><h3>What is n8n? Do I have to pay for it?</h3><p>n8n is the automation platform these workflows run on. The Community Edition is free to self-host, and that is what these packs are built for. There is no software bill in the stack we ship.</p></div>
+<div class="qa"><h3>Do I need API keys?</h3><p>Lead Finder needs none — no API key, no signup; it reads free OpenStreetMap data through the Overpass API. The AI steps (Enrichment, Outreach Drafts, Proposal Draft, Follow-up Nudges) run on OpenRouter&#x27;s free-tier models, which need no credit card. The setup README covers the free setup.</p></div>
+<div class="qa"><h3>Where does the lead data come from?</h3><p>OpenStreetMap, queried through its Overpass API — free map data. Lead Finder outputs business name, address, phone, website, email, and coordinates where OpenStreetMap has them. Coverage depends on what OpenStreetMap has mapped in the area you search.</p></div>
+<div class="qa"><h3>What kinds of businesses can I search for?</h3><p>The packs are built for local businesses — the listings name dentists, plumbers, salons, law firms, and restaurants as examples. Niches and search radius are customizable in plainly labeled nodes.</p></div>
+<div class="qa"><h3>Can I customize the workflows?</h3><p>Yes — that is the point of owning the files. Niches, radius, prompts, form fields, the follow-up timing, proposal voice, and models all live in plainly labeled nodes you can change.</p></div>
+<h2>The human-approval rule</h2>
+<div class="qa"><h3>Does it send emails automatically?</h3><p>No. Never. AI drafts. You approve. Nothing sends automatically — ever. Every outreach email, confirmation, proposal, and follow-up is produced as a draft locked to &quot;DRAFT — HUMAN REVIEW REQUIRED&quot; until you read it and send it yourself.</p></div>
+<div class="qa"><h3>Why don&#x27;t the workflows just send?</h3><p>Because a message with your name on it should have your eyes on it first. The human review gate is a feature, not a limitation.</p></div>
+<h2>The free sample</h2>
+<div class="qa"><h3>Is there a free version I can try?</h3><p>Yes — a free sample of Lead Finder is on GitHub: <a href="https://github.com/sellamuse/lead-finder-free-sample.">https://github.com/sellamuse/lead-finder-free-sample.</a> It includes the working sample workflow, a README, and a preview CSV of real output (Des Moines coffee shops pulled from OpenStreetMap).</p></div>
+<div class="qa"><h3>How is the free sample different from the paid Lead Finder?</h3><p>The sample is deliberately limited: searches are clamped to a 3,000 m radius and a maximum of 25 results, it covers 6 niches, and its output is name, address, and phone only. The paid Lead Finder outputs website, email, and coordinates as well, with customizable niche and radius, and it is part of the pipeline that feeds AI Enrichment and Outreach Drafts.</p></div>
+<h2>Buying</h2>
+<div class="qa"><h3>How do I buy, and when do I get the files?</h3><p>Through the store: <a href="https://payhip.com/SellaMuse.">https://payhip.com/SellaMuse.</a> Delivery is an instant ZIP download after purchase (once checkout opens) — the workflow JSON files plus the setup README.</p></div>
+<div class="qa"><h3>Can I check out right now?</h3><p>Honest answer: checkout is temporarily unable to accept payments while we finish connecting the store&#x27;s payout method. It opens very soon. In the meantime the free sample is available now on GitHub, and it is a real working piece of the paid Lead Finder.</p></div>
+<div class="qa"><h3>What happens after I purchase?</h3><p>You download the ZIP, import the JSON files into your n8n (Workflows → Import from File), and follow the setup README. From there the workflows run on your own setup, on the free stack.</p></div>
+<div class="qa"><h3>Is it a subscription?</h3><p>No. One-time purchase, yours to keep and customize. There is no ongoing software cost for the stack the packs are built on.</p></div>
+<div class="qa"><h3>Can I use these for client work?</h3><p>Yes — the packs are made for freelancers and small agencies who sell lead-gen, outreach, and onboarding as a service to local businesses, and the output (lead lists, drafts, proposals) is yours or your client&#x27;s. The license covers you and your own team, and you can customize the workflows freely. What it does not cover: reselling, giving away, or publicly sharing the workflow files or the ZIP themselves — the files are the product.</p></div>
+<h2>Skill level</h2>
+<div class="qa"><h3>How technical do I need to be?</h3><p>You need to be able to install n8n (free Community Edition) and import a file — the setup README is step-by-step and written for the $0 setup. You do not need API keys for Lead Finder, and you do not need to write code to run the workflows as shipped. Customizing prompts and nodes is done in plainly labeled fields.</p></div>
+<h2>Support, refunds, and the rest</h2>
+<div class="qa"><h3>What is your refund policy?</h3><p>7 days from purchase: full refund, no questions asked. Ask through the store&#x27;s contact option on Payhip and the refund goes back to your original payment method. When a refund is issued the license ends, so the files get deleted.</p></div>
+<div class="qa"><h3>Will I get updates if the workflows are improved?</h3><p>Yes. Bug fixes and compatibility updates for the pack or single you bought are free for as long as that product is listed — re-download the current files from your Payhip library whenever we publish them. New, separately sold products are not included.</p></div>
+<div class="qa"><h3>Do you have testimonials or sales numbers I can see?</h3><p>No — and we will not invent any. The store is new. The free sample on GitHub shows real output from the actual Lead Finder workflow, which is the proof we would rather you judge.</p></div>
+</div>
+</body>
+</html>
